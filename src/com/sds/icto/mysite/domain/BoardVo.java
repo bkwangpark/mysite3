@@ -6,6 +6,7 @@ public class BoardVo {
 	private String context;
 	private Long mem_no;
 	private String mem_name;
+	private Long view_cnt;
 	private String date;
 	
 	public Long getNo() {
@@ -43,6 +44,12 @@ public class BoardVo {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public Long getView_cnt() {
+		return view_cnt;
+	}
+	public void setView_cnt(Long view_cnt) {
+		this.view_cnt = view_cnt;
 	}
 	
 }

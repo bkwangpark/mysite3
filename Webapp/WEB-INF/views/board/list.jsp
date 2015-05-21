@@ -11,7 +11,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<c:import url="/views/include/header.jsp" />
+			<c:import url="/WEB-INF/views/include/header.jsp" />
 		</div>
 		<div id="content">
 			<div id="board">
@@ -31,7 +31,7 @@
 					<c:forEach items="${list }" var="vo">
 					<tr>
 						<td>${vo.no }</td>
-						<td><a href="/mysite3/board?a=show&no=${vo.no }">${vo.title }</a></td>
+						<td><a href="/mysite3/board/view/${vo.no}">${vo.title }</a></td>
 						<td>${vo.mem_name }</td>
 						<td>1</td>
 						<td>${vo.date }</td>
@@ -42,15 +42,15 @@
 					</c:forEach>
 				</table>
 				<div class="bottom">
-					<a href="/mysite3/views/board/write.jsp" id="new-book">글쓰기</a>
+					<a href="/mysite3/board/write" id="new-book">글쓰기</a>
 				</div>				
 			</div>
 		</div>
 		<div id="navigation">
-			<c:import url="/views/include/navigation_board.jsp" />
+			<c:import url="/WEB-INF/views/include/navigation_board.jsp" />
 		</div>
 		<div id="footer">
-			<c:import url="/views/include/footer.jsp" />
+			<c:import url="/WEB-INF/views/include/footer.jsp" />
 		</div>
 	</div>
 </body>
