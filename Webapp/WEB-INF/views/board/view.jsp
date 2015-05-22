@@ -22,21 +22,21 @@
 					</tr>
 					<tr>
 						<td class="label">제목</td>
-						<td >${vo.title }</td>
+						<td >${vo1.title }</td>
 					</tr>
 					<tr>
 						<td class="label">내용</td>
 						<td>
 							<div class="view-content">
-								${vo.context }
+								${vo1.content }
 							</div>
 						</td>
 					</tr>
 				</table>
 				<div class="bottom">
 					<a href="/mysite3/board">글목록</a>
-					<c:if test="${vo.mem_no==authMember.no }">
-					<a href="/mysite3/views/board/modify.jsp?a=${vo.no}">글수정</a>
+					<c:if test="${vo1.mem_no==authMember.no }">
+					<a href="/mysite3/board/modify/${vo.no}/${authMember.no}">글수정</a>
 					</c:if>
 				</div>
 			</div>

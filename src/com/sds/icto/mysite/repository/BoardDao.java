@@ -41,7 +41,7 @@ public class BoardDao {
 
 			// 3. binding
 			pstmt.setString(1, vo.getTitle());
-			pstmt.setString(2, vo.getContext());
+			pstmt.setString(2, vo.getContent());
 			pstmt.setLong(3, vo.getMem_no());
 			pstmt.setString(4, vo.getMem_name());
 
@@ -67,7 +67,7 @@ public class BoardDao {
 
 			// 3. binding
 			pstmt.setString(1, vo.getTitle());
-			pstmt.setString(2, vo.getContext());
+			pstmt.setString(2, vo.getContent());
 			pstmt.setLong(3, vo.getNo());
 			pstmt.setLong(4, vo.getMem_no());
 
@@ -133,7 +133,7 @@ public class BoardDao {
 				BoardVo vo = new BoardVo();
 				vo.setNo(no);
 				vo.setTitle(title);
-				vo.setContext(context);
+				vo.setContent(context);
 				vo.setMem_no(mem_no);
 				vo.setMem_name(mem_name);
 				vo.setView_cnt(view_cnt);
@@ -176,7 +176,7 @@ public class BoardDao {
 				BoardVo vo = new BoardVo();
 				vo.setNo(no);
 				vo.setTitle(title);
-				vo.setContext(context);
+				vo.setContent(context);
 				vo.setMem_no(mem_no);
 				vo.setMem_name(mem_name);
 				vo.setView_cnt(view_cnt);
@@ -238,7 +238,7 @@ public class BoardDao {
 			
 			vo.setNo(no1);
 			vo.setTitle(title);
-			vo.setContext(context);
+			vo.setContent(context);
 			vo.setMem_no(mem_no);
 			vo.setMem_name(mem_name);
 			vo.setView_cnt(view_cnt);

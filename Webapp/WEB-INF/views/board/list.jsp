@@ -15,8 +15,8 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form id="search_form" action="" method="post">
-					<input type="text" id="kwd" name="kwd" value="">
+				<form id="search_form" action="/mysite3/board/find" method="post">
+					<input type="text" id="key" name="key" value="">
 					<input type="submit" value="찾기">
 				</form>
 				<table class="tbl-ex">
@@ -33,10 +33,12 @@
 						<td>${vo.no }</td>
 						<td><a href="/mysite3/board/view/${vo.no}">${vo.title }</a></td>
 						<td>${vo.mem_name }</td>
-						<td>1</td>
+						<td>${vo.view_cnt }</td>
 						<td>${vo.date }</td>
 						<td>
-							<a href="" class="del">삭제</a>
+						<c:if test="${vo.mem_no==authMember.no }">
+							<a href="/mysite3/board/delete/${vo.no }/${authMember.no}" class="del">삭제</a>
+						</c:if>
 						</td>
 					</tr>
 					</c:forEach>

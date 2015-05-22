@@ -17,16 +17,30 @@ public class BoardService {
 		return boardDao.fetchList();
 	}
 
-	public void insertUser(BoardVo vo) {
+	public void insert(BoardVo vo) {
 		boardDao.insert(vo);
+	}
+	
+	public void updateContent(BoardVo vo) {
+		boardDao.update(vo);
 	}
 	
 	public BoardVo showContent(Long no){
 		BoardVo vo = boardDao.show(no);
 		return vo;
 	}
+	
+	public void view_cntUpdate(BoardVo vo){
+		boardDao.updateView(vo);
+	}
 
 	public void deleteContent(BoardVo vo) {
 		boardDao.delete(vo);
 	}
+	
+	public List<BoardVo> find(String key){
+		List<BoardVo> findlist = boardDao.findList(key);
+		return findlist;
+	}
+	
 }

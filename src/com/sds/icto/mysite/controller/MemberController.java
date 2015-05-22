@@ -30,16 +30,17 @@ public class MemberController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String loginForm(){
-		return "member/loginform";
+		return "/member/loginform";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@ModelAttribute MemberVo vo, HttpSession session){
 		MemberVo memberVo = memberService.authUser(vo);
 		if(memberVo==null){
-			return "redirect:/login?result=fail";
+			return "redirect:/member/login?result=fail";
 		}
 		session.setAttribute("authMember", memberVo);
+		
 		return "redirect:/index";
 	}
 	

@@ -3,7 +3,7 @@ package com.sds.icto.mysite.domain;
 public class BoardVo {
 	private Long no;
 	private String title;
-	private String context;
+	private String content;
 	private Long mem_no;
 	private String mem_name;
 	private Long view_cnt;
@@ -21,11 +21,12 @@ public class BoardVo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContext() {
-		return context;
+	
+	public String getContent() {
+		return content;
 	}
-	public void setContext(String context) {
-		this.context = context;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public Long getMem_no() {
 		return mem_no;

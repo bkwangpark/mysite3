@@ -5,9 +5,16 @@ public class GuestBookVo {
 	private String name;
 	private String password;
 	private String context;
+	private String date;
 	
 	public Long getNo() {
 		return no;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public void setNo(Long no) {
 		this.no = no;

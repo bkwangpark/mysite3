@@ -8,6 +8,8 @@
 	<settings useStatementNamespaces="true"/>
 	
 	<!-- sql mapping fiels -->
+	<sqlMap resource="sql/member.xml" />
 	<sqlMap resource="sql/guestbook.xml" />
+	<sqlMap resource="sql/board.xml" />
 
 </sqlMapConfig>
