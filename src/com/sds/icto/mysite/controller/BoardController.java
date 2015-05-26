@@ -34,6 +34,7 @@ public class BoardController {
 
 	@RequestMapping(value = { "/insert" }, method = RequestMethod.POST)
 	public String insert(@ModelAttribute BoardVo vo) {
+		vo.setView_cnt((long) 0);
 		boardService.insert(vo);
 		return "redirect:/board";
 	}
@@ -60,7 +61,9 @@ public class BoardController {
 	public String show(@PathVariable Long no, Model model) {
 		model.addAttribute("no", no);
 		BoardVo vo = boardService.showContent(no);
+		System.out.println(vo.getView_cnt());
 		boardService.view_cntUpdate(vo);
+		System.out.println(vo.getView_cnt());
 		model.addAttribute("vo1", vo);
 		return "board/view";
 	}

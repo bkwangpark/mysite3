@@ -15,7 +15,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<jsp:include page="/WEB-INF/views/include/header.jsp" flush="false"/>
+			<c:import url="/WEB-INF/views/include/header.jsp" />
 		</div>
 		<div id="content">
 			<div id="guestbook">
@@ -27,7 +27,7 @@
 							<td>비밀번호</td><td><input type="password" name="password"></td>
 						</tr>
 						<tr>
-							<td colspan=4><textarea name="context" id="context"></textarea></td>
+							<td colspan=4><textarea name="content" id="content"></textarea></td>
 						</tr>
 						<tr>
 							<td colspan=4 align=right>
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<jsp:include page="/WEB-INF/views/include/navigation.jsp"/>
+			<jsp:include page="/WEB-INF/views/include/navigation_board.jsp"/>
 		</div>
 		<div id="footer">
 			<p>(c)opyright 2014 </p>

@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="board">
+	<typeAlias alias="BoardVo" type="com.sds.icto.mysite.domain.BoardVo" />
+	
+	<resultMap class="BoardVo" id="resultMapList">
+		<result column="no" property="no" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="member_no" property="mem_no" />
+		<result column="member_name" property="mem_name" />
+		<result column="view_cnt" property="view_cnt" />
+		<result column="reg_date" property="date" />
+	</resultMap>
 
+	<insert id="insert" parameterClass="BoardVo">
+		<![CDATA[
+		insert into board values(board_no_seq.nextval, #title#, #content#, #mem_no#, #mem_name#, #view_cnt#, sysdate)
+		]]>
+	</insert>
+
+	<update id="update" parameterClass="BoardVo">
+		<![CDATA[update board set title=#title#, content=#content# where no=#no# and member_no=#mem_no#]]>
+	</update>
+
+	<delete id="delete" parameterClass="BoardVo">
+		<![CDATA[delete from board where no=#no# and member_no=#mem_no#]]>
+	</delete>
+
+	<select id="findlist" resultMap="resultMapList">
+		<![CDATA[select * FROM BOARD where title like '%' ||#key#|| '%' order by no]]>
+	</select>
+
+	<select id="list" resultMap="resultMapList">
+		<![CDATA[select * FROM board order by no]]>
+	</select>
+
+	<update id="updateView" parameterClass="BoardVo">
+		<![CDATA[update board set view_cnt=view_cnt+1 where no=#no#]]>
+	</update>
+
+	<select id="show" resultMap="resultMapList"> 
+ 		<![CDATA[select * from board where no=#no#]]>
+	</select>
 
 
 </sqlMap>
